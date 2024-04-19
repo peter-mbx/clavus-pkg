@@ -1,12 +1,21 @@
 name: clavus
 base: core22
 version: '1.1.0'
+license: MIT
+contact: pietro.mobrici@gmail.com
+website: https://github.com/peter-mbx/clavus
+source-code: https://github.com/peter-mbx/clavus
+
 summary: Simplify the management of configurations on your machine
 description: |
   A lightweight command-line tool designed for anyone in the tech field, specially for IT consultants or professionals managing multiple clients environments. This tool simplifies the management of configurations on your machine, allowing you to configure your environment and load the necessary resources, like files and/or commands.
 
 grade: stable
 confinement: classic
+
+architectures:
+  - build-on: [amd64]
+    build-for: [all]
 
 parts:
   clavus:
@@ -21,4 +30,3 @@ parts:
 apps:
   clavus:
     command: bin/clavus
-    plugs: [home, network, process-control]
